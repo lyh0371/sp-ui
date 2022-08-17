@@ -3,8 +3,8 @@ module.exports = {
     root: true,
     parserOptions: {
       ecmaVersion: 11,
-      sourceType: 'module',
-      parser: '@typescript-eslint/parser'
+      parser: 'babel-eslint',
+      sourceType: 'module'
     },
     env: {
       browser: true,
@@ -12,7 +12,7 @@ module.exports = {
       es6: true
     },
     plugins: ['prettier'],
-    extends: ['plugin:vue/vue3-recommended', 'eslint:recommended', 'plugin:prettier/recommended'],
+    extends: ['plugin:vue/recommended', 'eslint:recommended', 'plugin:prettier/recommended'],
     rules: {
       'vue/order-in-components': 'off',
       'vue/html-self-closing': 'off',
@@ -29,7 +29,7 @@ module.exports = {
       ],
       'vue/singleline-html-element-content-newline': 'off',
       'vue/multiline-html-element-content-newline': 'off',
-      'vue/name-property-casing': 'off',
+      'vue/name-property-casing': ['error', 'PascalCase'],
       'vue/no-v-html': 'off',
       
 'prettier/prettier': 'error',
@@ -258,6 +258,6 @@ yoda: [2, 'never'],
 ],
 'array-bracket-spacing': [2, 'never']
 
-    }
+    } 
   }
   

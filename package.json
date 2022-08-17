@@ -1,11 +1,9 @@
 {
   "name": "sp-ui-code",
-  "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "description": "市面上基于 vue3 的组件库已经很泛滥，而`SP-UI` 的问世不是为了做一个完整的组件库，而是对其他组件库的一种补充，`SP-UI`会去思考些更加有趣且好用的组件",
+  "main": "index.js",
   "scripts": {
-    "dev": "vite",
-    "build": "vue-tsc --noEmit && vite build",
-    "preview": "vite preview",
     "w": "web-norm",
     "prepare": "husky install",
     "pre-commit": "lint-staged",
@@ -13,15 +11,19 @@
     "eslint": "eslint --cache --max-warnings 0  \"{src,mock}/**/*.{vue,ts,js,tsx}\" --fix",
     "commit": "git add . && git-cz"
   },
-  "dependencies": {
-    "vue": "^3.2.37"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lyh0371/sp-ui.git"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lyh0371/sp-ui/issues"
+  },
+  "homepage": "https://github.com/lyh0371/sp-ui#readme",
   "devDependencies": {
-    "@vitejs/plugin-vue": "^3.0.3",
-    "@vitejs/plugin-vue-jsx": "^2.0.0",
-    "typescript": "^4.6.4",
-    "vite": "^3.0.7",
-    "vue-tsc": "^0.39.5",
+    "w": "^1.1.0",
     "web-norm": "^1.0.24",
     "eslint": "^7.25.0",
     "prettier": "^2.7.1",
@@ -29,8 +31,6 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-html": "^6.2.0",
     "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-vue": "^9.2.0",
-    "@typescript-eslint/parser": "^5.30.7",
     "husky": "^8.0.1",
     "lint-staged": "^12.4.1",
     "@commitlint/cli": "^17.0.3",

@@ -6,6 +6,7 @@
   "scripts": {
     "w": "web-norm",
     "prepare": "husky install",
+    "dev": "pnpm -C play dev",
     "pre-commit": "lint-staged",
     "postinstallmac": "git config core.hooksPath .husky && chmod 700 .husky/*",
     "eslint": "eslint --cache --max-warnings 0  \"{src,mock}/**/*.{vue,ts,js,tsx}\" --fix",
@@ -23,21 +24,21 @@
   },
   "homepage": "https://github.com/lyh0371/sp-ui#readme",
   "devDependencies": {
-    "w": "^1.1.0",
-    "web-norm": "^1.0.24",
-    "eslint": "^7.25.0",
-    "prettier": "^2.7.1",
-    "eslint-friendly-formatter": "^4.0.1",
-    "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-html": "^6.2.0",
-    "eslint-config-prettier": "^8.5.0",
-    "husky": "^8.0.1",
-    "lint-staged": "^12.4.1",
     "@commitlint/cli": "^17.0.3",
     "@commitlint/config-angular": "^17.0.3",
+    "@commitlint/cz-commitlint": "^17.0.3",
     "commitizen": "^4.2.4",
     "cz-customizable": "^6.9.0",
-    "@commitlint/cz-commitlint": "^17.0.3"
+    "eslint": "^7.25.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-friendly-formatter": "^4.0.1",
+    "eslint-plugin-html": "^6.2.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^12.4.1",
+    "prettier": "^2.7.1",
+    "w": "^1.1.0",
+    "web-norm": "^1.0.24"
   },
   "lint-staged": {
     "*.{js,ts,vue,jsx,tsx}": [
@@ -49,5 +50,8 @@
     "commitizen": {
       "path": "@commitlint/cz-commitlint"
     }
+  },
+  "dependencies": {
+    "vue": "^3.2.37"
   }
 }

@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "sp-ui": "workspace:^1.0.0",
     "vue": "^3.2.37"
   },
   "devDependencies": {

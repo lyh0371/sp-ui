@@ -6,10 +6,14 @@
   "scripts": {
     "w": "web-norm",
     "prepare": "husky install",
-    "dev": "pnpm -C play dev",
+    "dev": "vite",
+    "dev:play": "pnpm -C play dev",
+    "build:comp": "esno ./srcipts/build/vite.ts",
+    "build": "vite build",
     "pre-commit": "lint-staged",
+    "preinstall": "npx only-allow pnpm",
     "postinstallmac": "git config core.hooksPath .husky && chmod 700 .husky/*",
-    "eslint": "eslint --cache --max-warnings 0  \"{src,mock}/**/*.{vue,ts,js,tsx}\" --fix",
+    "eslint": "eslint --cache --max-warnings 0  \"packages/**/*.{vue,ts,js,tsx}\" --fix",
     "commit": "git add . && git-cz"
   },
   "repository": {
@@ -27,6 +31,8 @@
     "@commitlint/cli": "^17.0.3",
     "@commitlint/config-angular": "^17.0.3",
     "@commitlint/cz-commitlint": "^17.0.3",
+    "@vitejs/plugin-vue": "^3.0.3",
+    "babel-eslint": "^10.1.0",
     "commitizen": "^4.2.4",
     "cz-customizable": "^6.9.0",
     "eslint": "^7.25.0",
@@ -34,11 +40,17 @@
     "eslint-friendly-formatter": "^4.0.1",
     "eslint-plugin-html": "^6.2.0",
     "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-vue": "^9.2.0",
+    "esno": "^0.16.3",
+    "fs-extra": "^10.1.0",
     "husky": "^8.0.1",
+    "inquirer": "^8.0.0",
     "lint-staged": "^12.4.1",
     "prettier": "^2.7.1",
+    "vite": "^3.0.8",
     "w": "^1.1.0",
-    "web-norm": "^1.0.24"
+    "web-norm": "^1.0.24",
+    "@typescript-eslint/parser": "^5.30.7"
   },
   "lint-staged": {
     "*.{js,ts,vue,jsx,tsx}": [

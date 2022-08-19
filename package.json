@@ -8,7 +8,7 @@
     "prepare": "husky install",
     "dev": "vite",
     "dev:play": "pnpm -C play dev",
-    "build:comp": "esno ./srcipts/build/vite.ts",
+    "build:comp": "esno ./srcipts/build/toComponent.ts",
     "build": "vite build",
     "pre-commit": "lint-staged",
     "preinstall": "npx only-allow pnpm",

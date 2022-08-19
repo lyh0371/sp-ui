@@ -7,6 +7,8 @@ importers:
       '@commitlint/cli': ^17.0.3
       '@commitlint/config-angular': ^17.0.3
       '@commitlint/cz-commitlint': ^17.0.3
+      '@sp-ui/utils': workspace:^1.0.0
+      '@types/fs-extra': ^9.0.13
       '@typescript-eslint/parser': ^5.30.7
       '@vitejs/plugin-vue': ^3.0.3
       babel-eslint: ^10.1.0
@@ -29,11 +31,13 @@ importers:
       w: ^1.1.0
       web-norm: ^1.0.24
     dependencies:
+      '@sp-ui/utils': link:packages/utils
       vue: registry.npmmirror.com/vue/3.2.37
     devDependencies:
       '@commitlint/cli': registry.npmmirror.com/@commitlint/cli/17.0.3
       '@commitlint/config-angular': registry.npmmirror.com/@commitlint/config-angular/17.0.3
       '@commitlint/cz-commitlint': registry.npmmirror.com/@commitlint/cz-commitlint/17.0.3_commitizen@4.2.5+inquirer@8.2.4
+      '@types/fs-extra': registry.npmmirror.com/@types/fs-extra/9.0.13
       '@typescript-eslint/parser': registry.npmmirror.com/@typescript-eslint/parser/5.33.1_eslint@7.32.0
       '@vitejs/plugin-vue': registry.npmmirror.com/@vitejs/plugin-vue/3.0.3_vite@3.0.8+vue@3.2.37
       babel-eslint: registry.npmmirror.com/babel-eslint/10.1.0_eslint@7.32.0
@@ -1069,6 +1073,14 @@ packages:
     resolution: {integrity: sha512-yOlFc+7UtL/89t2ZhjPvvB/DeAr3r+Dq58IgzsFkOAvVC6NMJXmCGjbptdXdR9qsX7pKcTL+s87FtYREi2dEEQ==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@tsconfig/node16/-/node16-1.0.3.tgz}
     name: '@tsconfig/node16'
     version: 1.0.3
+    dev: true
+
+  registry.npmmirror.com/@types/fs-extra/9.0.13:
+    resolution: {integrity: sha512-nEnwB++1u5lVDM2UI4c1+5R+FYaKfaAzS4OococimjVm3nQw3TuzH5UNsocrcTBbhnerblyHj4A49qXbIiZdpA==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/fs-extra/-/fs-extra-9.0.13.tgz}
+    name: '@types/fs-extra'
+    version: 9.0.13
+    dependencies:
+      '@types/node': registry.npmmirror.com/@types/node/18.7.6
     dev: true
 
   registry.npmmirror.com/@types/minimist/1.2.2:

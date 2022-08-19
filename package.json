@@ -31,6 +31,8 @@
     "@commitlint/cli": "^17.0.3",
     "@commitlint/config-angular": "^17.0.3",
     "@commitlint/cz-commitlint": "^17.0.3",
+    "@types/fs-extra": "^9.0.13",
+    "@typescript-eslint/parser": "^5.30.7",
     "@vitejs/plugin-vue": "^3.0.3",
     "babel-eslint": "^10.1.0",
     "commitizen": "^4.2.4",
@@ -49,8 +51,7 @@
     "prettier": "^2.7.1",
     "vite": "^3.0.8",
     "w": "^1.1.0",
-    "web-norm": "^1.0.24",
-    "@typescript-eslint/parser": "^5.30.7"
+    "web-norm": "^1.0.24"
   },
   "lint-staged": {
     "*.{js,ts,vue,jsx,tsx}": [
@@ -64,6 +65,7 @@
     }
   },
   "dependencies": {
+    "@sp-ui/utils": "workspace:^1.0.0",
     "vue": "^3.2.37"
   }
 }

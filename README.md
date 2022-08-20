@@ -10,3 +10,7 @@
 
 - [ ] 框架搭建
   - [x] monorepo
+
+```js
+ @iconify/ic
+```

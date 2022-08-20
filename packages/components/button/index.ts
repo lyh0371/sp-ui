@@ -1,8 +1,4 @@
-import Button from './src/button.vue'
-import { App } from 'vue'
-export { Button }
-export default {
-  install(app: App) {
-    app.component(Button.name, Button)
-  }
-}
+import { withInstall } from '@sp-ui/utils'
+import button from './src/button'
+export const Button = withInstall(button)
+export default Button

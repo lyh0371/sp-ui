@@ -1,9 +1,4 @@
-import Alert from './src/alert.vue'
-import { App } from 'vue'
-
-export { Alert }
-export default {
-  install(app: App) {
-    app.component(Alert.name, Alert)
-  }
-}
+import { withInstall } from '@sp-ui/utils'
+import alert from './src/alert'
+export const Alert = withInstall(alert)
+export default Alert

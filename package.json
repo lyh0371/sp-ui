@@ -34,6 +34,7 @@
     "@types/fs-extra": "^9.0.13",
     "@typescript-eslint/parser": "^5.30.7",
     "@vitejs/plugin-vue": "^3.0.3",
+    "@vitejs/plugin-vue-jsx": "^2.0.0",
     "babel-eslint": "^10.1.0",
     "commitizen": "^4.2.4",
     "cz-customizable": "^6.9.0",

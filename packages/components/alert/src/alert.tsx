@@ -1,6 +1,6 @@
 import { defineComponent } from 'vue'
 export default defineComponent({
   setup() {
-    return <div> alert </div>
+    return () => <button>我是alert点击我</button>
   }
 })

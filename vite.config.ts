@@ -3,9 +3,10 @@ import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 export default defineConfig({
   plugins: [vue(), vueJsx()],
+
   build: {
     rollupOptions: {
-      external: 'vue',
+      external: ['vue'],
       output: {
         globals: {
           vue: 'Vue'
@@ -16,7 +17,7 @@ export default defineConfig({
     lib: {
       entry: './packages/index.ts',
       name: 'SpUi',
-      formats: ['es', 'iife', 'umd', 'cjs']
+      formats: ['es', 'cjs']
     },
 
     outDir: './dist'

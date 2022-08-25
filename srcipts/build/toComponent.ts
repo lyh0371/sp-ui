@@ -14,6 +14,7 @@ function isComponent(dirName: string) {
 // 打包执行函数
 async function buildFn(compName: string) {
   const entry = resolve(componentRoot, compName)
+  const outDir = `./dist/components/${compName}`
 
   const buildConfg: BuildOptions = {
     rollupOptions: {
@@ -25,12 +26,27 @@ async function buildFn(compName: string) {
       entry,
       name: compName,
       fileName: 'index',
-      formats: ['es', 'iife', 'umd', 'cjs']
+      formats: ['es', 'cjs']
     },
-    outDir: `./dist/components/${compName}`
+    outDir
   }
   await build({
-    build: buildConfg
+    build: buildConfg,
+    plugins: [
+      {
+        name: 'addStyle',
+        generateBundle(config, bundle: any) {
+          for (const key in bundle) {
+            if (key === 'index.js') {
+              bundle[key].code = `${bundle[key].code}require("./style.css")`
+            }
+            if (key === 'index.mjs') {
+              bundle[key].code = `${bundle[key].code}import "./style.css"`
+            }
+          }
+        }
+      }
+    ]
   })
 }
 fs.readdirSync(componentRoot).filter(isComponent).forEach(buildFn)

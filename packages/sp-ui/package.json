@@ -6,7 +6,5 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "刘小灰",
-  "license": "MIT",
-  "main": "components/index.js",
-  "module": "components/index.mjs"
+  "license": "MIT"
 }

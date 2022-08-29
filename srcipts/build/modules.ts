@@ -1,7 +1,8 @@
 import { OutputOptions, rollup } from 'rollup'
 import { spRoot } from './paths'
 import { excludeFiles, writeBundles } from './utils'
-
+// 不需要了
+import postcss from 'rollup-plugin-postcss'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import { nodeResolve } from '@rollup/plugin-node-resolve'
@@ -24,6 +25,9 @@ async function buildModules() {
     plugins: [
       vue({
         isProduction: false
+      }),
+      postcss({
+        extract: 'dist/build.css'
       }),
       vueJsx(),
       nodeResolve({
@@ -49,9 +53,9 @@ async function buildModules() {
         format: config.format,
         dir: config.output.path,
         exports: module === 'cjs' ? 'named' : undefined,
-        preserveModules: true,
+        preserveModules: true, // 让打包目录和我们目录对应
         preserveModulesRoot: spRoot,
-        sourcemap: true,
+        sourcemap: false,
         entryFileNames: `[name].${config.ext}`
       }
     })

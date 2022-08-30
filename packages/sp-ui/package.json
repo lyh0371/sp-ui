@@ -2,8 +2,6 @@
   "name": "sp-ui",
   "version": "1.0.0",
   "description": "sp-ui组件库vue3+vite+gulp+rollup",
-  "main": "lib/index.js",
-  "module": "es/index.mjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

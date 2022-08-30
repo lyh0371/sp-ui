@@ -2,7 +2,7 @@ import { OutputOptions, RollupBuild } from 'rollup'
 import type { ProjectManifest } from '@pnpm/types'
 import { epPackage } from './paths'
 export const excludeFiles = (files: string[]) => {
-  const excludes = ['node_modules', 'test', 'mock', 'package.json', 'dist']
+  const excludes = ['node_modules', 'test', 'mock', 'package.json', 'dist', 'index.scss']
   return files.filter((path) => !excludes.some((exclude) => path.includes(exclude)))
 }
 export function writeBundles(bundle: RollupBuild, options: OutputOptions[]) {

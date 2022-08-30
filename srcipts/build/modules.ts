@@ -1,8 +1,8 @@
 import { OutputOptions, rollup } from 'rollup'
+import { resolve } from 'path'
 import { epOutput, epPackage, spRoot } from './paths'
 import { excludeFiles, writeBundles } from './utils'
-import { copyFile } from 'fs/promises'
-import { resolve } from 'path'
+import { readJSON, writeJsonSync } from 'fs-extra'
 // 不需要了
 import postcss from 'rollup-plugin-postcss'
 import vue from '@vitejs/plugin-vue'
@@ -62,8 +62,11 @@ async function buildModules() {
   )
 }
 
-function copyFiles() {
-  copyFile(epPackage, resolve(epOutput, 'package.json'))
+async function copyFiles() {
+  const pkg = await readJSON(epPackage, 'utf-8')
+  pkg['main'] = 'lib/index.js'
+  pkg['module'] = 'es/index.mjs'
+  writeJsonSync(resolve(epOutput, 'package.json'), pkg, { spaces: 2 })
 }
 
 buildModules()

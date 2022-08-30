@@ -2,6 +2,7 @@
   <Button></Button>
 </template>
 <script lang="ts" setup>
-import { Button } from '../../dist/sp-ui.mjs'
+import 'sp-ui/index.scss'
+import { Button } from 'sp-ui'
 </script>
 <style scoped></style>

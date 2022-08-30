@@ -33,3 +33,4 @@ vitest 最近比较火，正好可以学习下
 - [ ] 框架搭建
   - [x] monorepo
   - [x] js 打包
+  - [x] css 打包

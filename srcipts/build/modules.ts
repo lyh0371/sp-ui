@@ -1,6 +1,8 @@
 import { OutputOptions, rollup } from 'rollup'
-import { spRoot } from './paths'
+import { epOutput, epPackage, spRoot } from './paths'
 import { excludeFiles, writeBundles } from './utils'
+import { copyFile } from 'fs/promises'
+import { resolve } from 'path'
 // 不需要了
 import postcss from 'rollup-plugin-postcss'
 import vue from '@vitejs/plugin-vue'
@@ -8,7 +10,6 @@ import vueJsx from '@vitejs/plugin-vue-jsx'
 import { nodeResolve } from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
 import esbuild from 'rollup-plugin-esbuild'
-
 import glob from 'fast-glob'
 import { buildConfigEntries } from './build-info'
 async function buildModules() {
@@ -19,7 +20,6 @@ async function buildModules() {
       onlyFiles: true
     })
   )
-
   const bundle = await rollup({
     input,
     plugins: [
@@ -62,4 +62,9 @@ async function buildModules() {
   )
 }
 
+function copyFiles() {
+  copyFile(epPackage, resolve(epOutput, 'package.json'))
+}
+
 buildModules()
+copyFiles()

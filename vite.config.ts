@@ -15,7 +15,7 @@ export default defineConfig({
       }
     },
     lib: {
-      entry: './packages/index.ts',
+      entry: './packages/sp-ui/index.ts',
       name: 'SpUi',
       formats: ['es', 'cjs']
     },

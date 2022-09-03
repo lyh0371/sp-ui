@@ -5,8 +5,7 @@ import { excludeFiles, writeBundles } from './utils'
 import { readJSON, writeJsonSync } from 'fs-extra'
 // 不需要了
 import postcss from 'rollup-plugin-postcss'
-import vue from '@vitejs/plugin-vue'
-import vueJsx from '@vitejs/plugin-vue-jsx'
+
 import { nodeResolve } from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
 import esbuild from 'rollup-plugin-esbuild'
@@ -23,13 +22,9 @@ async function buildModules() {
   const bundle = await rollup({
     input,
     plugins: [
-      vue({
-        isProduction: false
-      }),
       postcss({
         extract: 'dist/build.css'
       }),
-      vueJsx(),
       nodeResolve({
         extensions: ['.mjs', '.js', '.json', '.ts']
       }),

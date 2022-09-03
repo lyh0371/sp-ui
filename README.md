@@ -34,3 +34,4 @@ vitest 最近比较火，正好可以学习下
 - [x] monorepo
 - [x] js 打包
 - [x] css 打包
+- [x] 生成 ts 类型文件

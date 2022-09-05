@@ -35,7 +35,7 @@
   "bugs": {
     "url": "https://github.com/lyh0371/sp-ui/issues"
   },
-  "homepage": "https://github.com/lyh0371/sp-ui#readme",
+  "homepage": "https://sp-ui.vercel.app/",
   "devDependencies": {
     "@commitlint/cli": "^17.0.3",
     "@commitlint/config-angular": "^17.0.3",

@@ -1,3 +1,11 @@
+<p align="center">
+<img src="https://sp-ui.vercel.app/logo.png" alt="sp-ui" height="200">
+<p>
+
+<p align="center">
+<a href="https://github.com/lyh0371/sp-ui/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/lyh0371/sp-ui?style=for-the-badge"></a>
+<a href="https://github.com/lyh0371/sp-ui/network"><img alt="GitHub forks" src="https://img.shields.io/github/forks/lyh0371/sp-ui?style=for-the-badge"></a>
+</p>
 ## SP-UI🔥🔥🔥
 
 市面上基于 vue3 的组件库已经很泛滥，而`SP-UI` 的问世不是为了做一个完整的组件库，而是对其他组件库的一种补充，`SP-UI`会去思考些更加有趣且好用的组件

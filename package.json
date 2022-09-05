@@ -7,13 +7,17 @@
     "w": "web-norm",
     "prepare": "husky install",
     "dev": "vite",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:serve": "vitepress serve docs",
     "dev:play": "pnpm -C play dev",
     "build:play": "pnpm -C play build",
     "build:full": "vite build",
+    "copyTypes": "esno ./scripts/build/copyTypes",
     "build:types": "rimraf dist/types && esno ./scripts/build/buildTypes",
     "build:css": "rimraf dist/sp-ui/styles && gulp --gulpfile scripts/build/buildCss.ts --require @esbuild-kit/cjs-loader",
     "build:component": "esno ./scripts/build/buildComponent",
-    "build": "pnpm run clean:dist && pnpm run build:css && pnpm run build:component && pnpm run build:types",
+    "build": "pnpm run clean:dist && pnpm run build:css && pnpm run build:component && pnpm run build:types && pnpm run copyTypes",
     "clean:dist": "rimraf dist",
     "pre-commit": "lint-staged",
     "preinstall": "npx only-allow pnpm",
@@ -94,6 +98,7 @@
   },
   "dependencies": {
     "@sp-ui/utils": "workspace:^1.0.0",
+    "vitepress": "1.0.0-alpha.13",
     "vue": "^3.2.37"
   }
 }

@@ -1,5 +1,5 @@
 import { installer } from './defaults'
-export * from '@sp-ui/components'
+export * from './component'
 
 export default {
   install: installer

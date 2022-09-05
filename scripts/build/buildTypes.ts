@@ -34,7 +34,6 @@ async function buildType() {
 
   const tasks = sourceFiles.map(async (sourceFile) => {
     const relativePath = relative(packagesRoot, sourceFile.getFilePath())
-    console.log('relativePath', relativePath)
     consola.trace(chalk.yellow(`Generating definition for file: ${chalk.bold(relativePath)}`))
 
     const emitOutput = sourceFile.getEmitOutput()
@@ -45,7 +44,6 @@ async function buildType() {
     }
     const subTasks = emitFiles.map(async (outputFile) => {
       const filepath = outputFile.getFilePath()
-      console.log('filepath==', filepath)
       await mkdir(dirname(filepath), {
         recursive: true
       })
@@ -86,7 +84,6 @@ async function addSourceFiles(project: Project) {
         const sfc = vueCompiler.parse(content)
 
         const { script, scriptSetup } = sfc.descriptor
-
         if (script || scriptSetup) {
           let content = (hasTsNoCheck ? '// @ts-nocheck\n' : '') + (script?.content ?? '')
 
@@ -98,6 +95,7 @@ async function addSourceFiles(project: Project) {
           }
 
           const lang = scriptSetup?.lang || script?.lang || 'js'
+
           const sourceFile = project.createSourceFile(`${relative(process.cwd(), file)}.${lang}`, content)
           sourceFiles.push(sourceFile)
         }
@@ -108,9 +106,6 @@ async function addSourceFiles(project: Project) {
     }),
     ...epPaths.map(async (file) => {
       const content = await readFile(resolve(spRoot, file), 'utf-8')
-
-      console.log('packagesRoot', resolve(packagesRoot, file))
-
       sourceFiles.push(project.createSourceFile(resolve(packagesRoot, file), content))
     })
   ])

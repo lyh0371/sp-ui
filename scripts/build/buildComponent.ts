@@ -1,5 +1,7 @@
 import { OutputOptions, rollup } from 'rollup'
 import { resolve } from 'path'
+import vue from '@vitejs/plugin-vue'
+import vueJsx from '@vitejs/plugin-vue-jsx'
 import { epOutput, epPackage, spRoot } from './paths'
 import { excludeFiles, writeBundles } from './utils'
 import { readJSON, writeJsonSync } from 'fs-extra'
@@ -22,6 +24,10 @@ async function buildModules() {
   const bundle = await rollup({
     input,
     plugins: [
+      vue({
+        isProduction: false
+      }) as Plugin,
+      vueJsx() as Plugin,
       postcss({
         extract: 'dist/build.css'
       }),

@@ -8,3 +8,5 @@ export const epOutput = resolve(buildOutput, 'sp-ui')
 export const epPackage = resolve(spRoot, 'package.json')
 export const buildCssOutPut = resolve(epOutput, 'styles')
 export const componentRoot = resolve(packagesRoot, 'components')
+export const docsDirName = 'docs'
+export const docRoot = resolve(projRoot, docsDirName)

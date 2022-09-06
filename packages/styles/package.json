@@ -1,0 +1,15 @@
+{
+  "name": "@sp-ui/styles",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.scss",
+  "unpkg": "index.scss",
+  "jsdelivr": "index.scss",
+  "style": "index.scss",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

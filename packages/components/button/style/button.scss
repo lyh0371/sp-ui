@@ -1,5 +1,37 @@
-.button {
-  &:hover {
-    color: green;
+@use '@sp-ui/styles/var' as *;
+
+:root {
+  --button-default-color: var(--color-body);
+  --button-color-text: var(--color-text);
+  --button-color-primary: var(--color-primary);
+  --button-border-radius: var(--border-radius);
+  --button-font-size-default: var(--font-size-sm);
+}
+
+.sp-button {
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+  border: none;
+  border-radius: var(--button-border-radius);
+  user-select: none;
+  cursor: pointer;
+  font-family: inherit;
+  transition: box-shadow 0.2s, background-color 0.25s;
+  will-change: box-shadow;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  white-space: nowrap;
+  line-height: 1;
+
+  // 大小
+  &--size-default {
+    padding: 10px 15px;
+    font-size: var(--button-font-size-default);
+  }
+  // 类型
+  &--type-default {
+    color: var(--button-color-text);
+    background-color: var(--button-default-color);
   }
 }

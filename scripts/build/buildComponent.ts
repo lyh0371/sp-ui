@@ -11,6 +11,8 @@ import postcss from 'rollup-plugin-postcss'
 import { nodeResolve } from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
 import esbuild from 'rollup-plugin-esbuild'
+import DefineOptions from 'unplugin-vue-define-options/rollup'
+
 import glob from 'fast-glob'
 import { buildConfigEntries } from './build-info'
 async function buildModules() {
@@ -27,6 +29,7 @@ async function buildModules() {
       vue({
         isProduction: false
       }) as Plugin,
+      DefineOptions(),
       vueJsx() as Plugin,
       postcss({
         extract: 'dist/build.css'

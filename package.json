@@ -40,6 +40,7 @@
     "@commitlint/cli": "^17.0.3",
     "@commitlint/config-angular": "^17.0.3",
     "@commitlint/cz-commitlint": "^17.0.3",
+    "@ctrl/tinycolor": "^3.4.1",
     "@esbuild-kit/cjs-loader": "^2.3.3",
     "@pnpm/types": "^8.5.0",
     "@rollup/plugin-commonjs": "^22.0.2",
@@ -84,7 +85,7 @@
     "sass": "^1.54.5",
     "terser": "^5.14.2",
     "ts-morph": "^15.1.0",
-    "unplugin-vue-define-options": "^0.11.1",
+    "unplugin-vue-define-options": "^0.6.1",
     "vite": "^3.0.8",
     "vitepress-theme-demoblock": "^1.4.2",
     "w": "^1.1.0",
@@ -102,6 +103,7 @@
     }
   },
   "dependencies": {
+    "@sp-ui/styles": "workspace:^1.0.0",
     "@sp-ui/utils": "workspace:^1.0.0",
     "vitepress": "1.0.0-alpha.8",
     "vue": "^3.2.37"

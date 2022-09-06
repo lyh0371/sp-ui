@@ -1,0 +1,29 @@
+// css变量
+
+:root {
+  // 颜色
+  --color-primary: #3a7afe;
+  --color-body: #f5f5f5;
+  --color-text: #333;
+  --color-info: #00afef;
+  --color-success: #00c48f;
+  --color-warning: #ff9f00;
+  --color-danger: #f44336;
+  --color-disabled: #e0e0e0;
+  --color-text-disabled: #aaa;
+  // 字体
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+  --font-size-md: 16px;
+  --font-size-lg: 18px;
+  // 阴影
+  --shadow-key-umbra-opacity: rgba(0, 0, 0, 0.2);
+  --shadow-key-penumbra-opacity: rgba(0, 0, 0, 0.14);
+  --shadow-key-ambient-opacity: rgba(0, 0, 0, 0.12);
+  // 圆角
+  --border-radius: 4px;
+}
+html.dark {
+  --color-text: #eee;
+  --color-body: #1a1a1a;
+}

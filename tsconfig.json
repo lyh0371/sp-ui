@@ -3,6 +3,7 @@
   "compilerOptions": {
     "jsx": "preserve",
     "esModuleInterop": true,
+
     "composite": true,
     "moduleResolution": "Node",
     "target": "ES2022",

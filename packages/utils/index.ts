@@ -1,5 +1,5 @@
 const GNAME = 'Sp'
-export const globName = (name: string) => GNAME + name
+export const SpglobName = (name: string) => GNAME + name
 
 // button  sp-button
 export const namespace = (n: string) => {

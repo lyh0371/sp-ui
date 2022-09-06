@@ -6,10 +6,10 @@ import glob from 'fast-glob'
 import consola from 'consola'
 import chalk from 'chalk'
 
-import { buildOutput, spRoot, packagesRoot, projRoot } from './paths'
+import { buildOutput, spRoot, packagesRoot, projRoot, PKG_PREFIX } from './paths'
 import { resolve, relative, dirname } from 'path'
 import { excludeFiles } from './utils'
-import { Module } from './build-info'
+import { buildConfig, Module } from './build-info'
 const outDir = resolve(buildOutput, 'types')
 const TSCONFIG_PATH = resolve(projRoot, 'tsconfig.web.json')
 async function buildType() {
@@ -113,10 +113,12 @@ async function addSourceFiles(project: Project) {
 }
 
 function pathRewriter(module: Module) {
-  // const config = buildConfig[module]
+  const config = buildConfig[module]
   return (id: string) => {
     // id = id.replaceAll(`${PKG_PREFIX}/theme-chalk`, `${PKG_NAME}/theme-chalk`)
-    // id = id.replaceAll(`${PKG_PREFIX}/`, `${config.bundle.path}/`)
+    if (id && id.replaceAll) {
+      return id.replaceAll(`${PKG_PREFIX}/`, `${config.bundle.path}/`)
+    }
     return id
   }
 }

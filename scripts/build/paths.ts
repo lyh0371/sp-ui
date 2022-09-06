@@ -10,3 +10,4 @@ export const buildCssOutPut = resolve(epOutput, 'styles')
 export const componentRoot = resolve(packagesRoot, 'components')
 export const docsDirName = 'docs'
 export const docRoot = resolve(projRoot, docsDirName)
+export const PKG_PREFIX = '@sp-ui'

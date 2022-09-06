@@ -3,6 +3,8 @@ import gulpSass from 'gulp-sass'
 import dartSass from 'sass'
 import cleanCSS from 'gulp-clean-css'
 import consola from 'consola'
+import autoprefixer from 'gulp-autoprefixer'
+
 import rename from 'gulp-rename'
 
 import chalk from 'chalk'
@@ -14,10 +16,9 @@ async function buildCss() {
   // console.log(componentRoot)
   const sassRoot = resolve(componentRoot, '**/**/*.scss')
 
-  console.log('buildCssOutPut', buildCssOutPut)
-
   return src(sassRoot)
     .pipe(sass.sync())
+    .pipe(autoprefixer({ cascade: false }))
     .pipe(
       cleanCSS({}, (details) => {
         consola.success(`${chalk.cyan(details.name)}: ${chalk.yellow(details.stats.originalSize / 1000)} KB -> ${chalk.green(details.stats.minifiedSize / 1000)} KB`)

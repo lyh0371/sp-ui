@@ -4,9 +4,7 @@ import dartSass from 'sass'
 import cleanCSS from 'gulp-clean-css'
 import consola from 'consola'
 import autoprefixer from 'gulp-autoprefixer'
-
 import rename from 'gulp-rename'
-
 import chalk from 'chalk'
 
 import { buildCssOutPut, componentRoot } from './paths'
@@ -15,6 +13,7 @@ async function buildCss() {
   const sass = gulpSass(dartSass)
   // console.log(componentRoot)
   const sassRoot = resolve(componentRoot, '**/**/*.scss')
+  console.log(sassRoot)
 
   return src(sassRoot)
     .pipe(sass.sync())

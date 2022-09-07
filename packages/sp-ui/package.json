@@ -1,5 +1,5 @@
 {
-  "name": "sp-ui",
+  "name": "sp-ui-vue",
   "version": "1.0.0",
   "description": "sp-ui组件库vue3+vite+gulp+rollup",
   "scripts": {

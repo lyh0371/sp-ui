@@ -13,7 +13,6 @@ async function buildCss() {
   const sass = gulpSass(dartSass)
   // console.log(componentRoot)
   const sassRoot = resolve(componentRoot, '**/**/*.scss')
-  console.log(sassRoot)
 
   return src(sassRoot)
     .pipe(sass.sync())

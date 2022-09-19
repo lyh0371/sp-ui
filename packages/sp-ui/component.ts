@@ -1,4 +1,5 @@
-import { SpButton, SAlert } from '@sp-ui/components'
-export default [SpButton, SAlert]
+export { SpButton } from '../components/button'
+export type { SpButtonInstance } from '../components/button'
 
-export { SpButton, SAlert }
+export { SpAlert } from '../components/alert'
+export type { SpAlertInstance } from '../components/alert'

@@ -1,5 +1,7 @@
 import { App } from 'vue'
-import components from './component'
+import * as components from './component'
 export function installer(app: App) {
-  components.forEach((component) => app.use(component))
+  Object.entries(components).forEach(([key, value]): void => {
+    app.component(key, value)
+  })
 }

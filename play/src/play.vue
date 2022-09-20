@@ -1,8 +1,3 @@
-<template>
-  <Button></Button>
-</template>
-<script lang="ts" setup>
-import 'sp-ui/index.scss'
-import { Button } from 'sp-ui'
-</script>
+<template><SpButton type="info" size="large"></SpButton></template>
+<script lang="ts" setup></script>
 <style scoped></style>

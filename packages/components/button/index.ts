@@ -4,3 +4,4 @@ import button from './src/button.vue'
 button.name = SpglobName('Button')
 export const SpButton = withInstall(button)
 export default SpButton
+export * from './src/props'

@@ -70,6 +70,7 @@ async function copyFiles() {
   const pkg = await readJSON(epPackage, 'utf-8')
   pkg['main'] = 'lib/index.js'
   pkg['module'] = 'es/index.mjs'
+  pkg['types'] = 'es/index.d.ts'
   writeJsonSync(resolve(epOutput, 'package.json'), pkg, { spaces: 2 })
 }
 

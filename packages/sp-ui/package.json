@@ -6,5 +6,15 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "刘小灰",
-  "license": "MIT"
+  "license": "MIT",
+  "exports": {
+    ".": {
+      "import": "./es/index.mjs",
+      "types": "./es/index.d.ts"
+    },
+    "./es": "./es/index.mjs",
+    "./es/*.mjs": "./es/*.mjs",
+    "./es/*": "./es/*.mjs",
+    "./*": "./*"
+  }
 }

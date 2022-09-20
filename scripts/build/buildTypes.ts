@@ -6,7 +6,7 @@ import glob from 'fast-glob'
 import consola from 'consola'
 import chalk from 'chalk'
 
-import { buildOutput, spRoot, packagesRoot, projRoot, PKG_PREFIX } from './paths'
+import { buildOutput, spRoot, packagesRoot, projRoot } from './paths'
 import { resolve, relative, dirname } from 'path'
 import { excludeFiles } from './utils'
 import { buildConfig, Module } from './build-info'
@@ -116,8 +116,8 @@ function pathRewriter(module: Module) {
   const config = buildConfig[module]
   return (id: string) => {
     // id = id.replaceAll(`${PKG_PREFIX}/theme-chalk`, `${PKG_NAME}/theme-chalk`)
-    if (id && id.replaceAll) {
-      return id.replaceAll(`${PKG_PREFIX}/`, `${config.bundle.path}/`)
+    if (id && id.replace) {
+      return id.replace(/@sp-ui/g, `sp-ui/${config.bundle.path}`)
     }
     return id
   }

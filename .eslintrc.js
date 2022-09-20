@@ -15,6 +15,7 @@ module.exports = {
   rules: {
     'vue/order-in-components': 'off',
     'vue/html-self-closing': 'off',
+    'vue/prefer-import-from-vue': 'off',
     'vue/require-default-prop': 'off',
     'vue/multi-word-component-names': 'off',
     'vue/no-reserved-component-names': 'off',

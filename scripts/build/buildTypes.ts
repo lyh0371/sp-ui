@@ -117,7 +117,8 @@ function pathRewriter(module: Module) {
   return (id: string) => {
     // id = id.replaceAll(`${PKG_PREFIX}/theme-chalk`, `${PKG_NAME}/theme-chalk`)
     if (id && id.replace) {
-      return id.replace(/@sp-ui/g, `sp-ui/${config.bundle.path}`)
+      return id.replace(/@sp-ui/g, `${config.bundle.path}`)
+      // return id.replace(/@sp-ui/g, `.`)
     }
     return id
   }

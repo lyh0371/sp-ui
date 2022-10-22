@@ -141,6 +141,12 @@ importers:
       w: 1.1.0
       web-norm: 1.0.24
 
+  dist/sp-ui:
+    specifiers:
+      sp-ui-vue: ^1.0.5
+    dependencies:
+      sp-ui-vue: 1.0.5
+
   packages/components:
     specifiers: {}
 
@@ -7023,6 +7029,10 @@ packages:
 
   /sourcemap-codec/1.4.8:
     resolution: {integrity: sha512-9NykojV5Uih4lgo5So5dtw+f0JgJX30KCNI8gwhz2J9A15wD0Ml6tjHKwf6fTSa6fAdVBdZeNOs9eJ71qCk8vA==}
+
+  /sp-ui-vue/1.0.5:
+    resolution: {integrity: sha512-Ah+1y0KrpGugmXiTpEJinq2w9CSVCXQsbQfRSVtTV3uCgmyLFXd3UHbIxI/NWBQLqbHSpc+iB7nnSsatJax2ug==}
+    dev: false
 
   /sparkles/1.0.1:
     resolution: {integrity: sha512-dSO0DDYUahUt/0/pD/Is3VIm5TGJjludZ0HVymmhYF6eNA53PVLhnUk0znSYbH8IYBuJdCE+1luR22jNLMaQdw==}

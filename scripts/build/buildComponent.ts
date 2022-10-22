@@ -2,8 +2,8 @@ import { OutputOptions, rollup } from 'rollup'
 import { resolve } from 'path'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
-import { epOutput, epPackage, spRoot } from './paths'
-import { excludeFiles, writeBundles } from './utils'
+import { epOutput, epPackage, spRoot, packagesRoot } from './paths'
+import { excludeFiles, writeBundles, generateExternal } from './utils'
 import { readJSON, writeJsonSync } from 'fs-extra'
 // 不需要了
 import postcss from 'rollup-plugin-postcss'
@@ -17,12 +17,13 @@ import glob from 'fast-glob'
 import { buildConfigEntries } from './build-info'
 async function buildModules() {
   const input = excludeFiles(
-    await glob('*', {
-      cwd: spRoot,
+    await glob('**/*.{js,ts,vue}', {
+      cwd: packagesRoot,
       absolute: true,
       onlyFiles: true
     })
   )
+
   const bundle = await rollup({
     input,
     plugins: [
@@ -47,7 +48,7 @@ async function buildModules() {
       })
     ],
     treeshake: false,
-    external: ['vue']
+    external: await generateExternal({ full: false })
   })
 
   await writeBundles(

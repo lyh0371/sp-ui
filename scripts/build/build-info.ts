@@ -10,12 +10,12 @@ export interface BuildInfo {
   output: {
     /** e.g: `es` */
     name: string
-    /** e.g: `dist/element-plus/es` */
+    /** e.g: `dist/sp-ui/es` */
     path: string
   }
 
   bundle: {
-    /** e.g: `element-plus/es` */
+    /** e.g: `sp-ui/es` */
     path: string
   }
 }
@@ -29,7 +29,7 @@ export const buildConfig: Record<Module, BuildInfo> = {
       path: resolve(epOutput, 'es')
     },
     bundle: {
-      path: `es`
+      path: `sp-ui-vue/es`
     }
   },
   cjs: {
@@ -41,7 +41,7 @@ export const buildConfig: Record<Module, BuildInfo> = {
       path: resolve(epOutput, 'lib')
     },
     bundle: {
-      path: `lib`
+      path: `sp-ui-vue/lib`
     }
   }
 }

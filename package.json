@@ -1,6 +1,6 @@
 {
   "name": "sp-ui-code",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "市面上基于 vue3 的组件库已经很泛滥，而`SP-UI` 的问世不是为了做一个完整的组件库，而是对其他组件库的一种补充，`SP-UI`会去思考些更加有趣且好用的组件",
   "main": "index.js",
   "scripts": {

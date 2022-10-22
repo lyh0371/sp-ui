@@ -24,6 +24,7 @@ export const getPackageDependencies = (pkgPath: string): Record<'dependencies' |
 }
 export const generateExternal = async (options: { full: boolean }) => {
   const { dependencies, peerDependencies } = getPackageDependencies(epPackage)
+
   return (id: string) => {
     const packages: string[] = peerDependencies
     if (!options.full) {

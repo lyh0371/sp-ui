@@ -31,5 +31,5 @@ async function buildCss() {
     )
     .pipe(dest(buildCssOutPut))
 }
-
+// @ts-ignore
 export default parallel(buildCss)

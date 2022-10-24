@@ -1,4 +1,4 @@
-import { OutputOptions, rollup } from 'rollup'
+import { OutputOptions, rollup, OutputBundle, NormalizedOutputOptions } from 'rollup'
 import { resolve } from 'path'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
@@ -45,7 +45,22 @@ async function buildModules() {
         loaders: {
           '.vue': 'ts'
         }
-      })
+      }),
+      {
+        name: 'addStyle',
+        async generateBundle(output: NormalizedOutputOptions, bundle: OutputBundle) {
+          for (const key in bundle) {
+            if (key.startsWith('components/') && key.endsWith('/index.js')) {
+              // @ts-ignore
+              bundle[key].code = `${bundle[key].code}require("./index.css")`
+            }
+            if (key.startsWith('components/') && key.endsWith('/index.mjs')) {
+              // @ts-ignore
+              bundle[key].code = `${bundle[key].code}import "./index.css"`
+            }
+          }
+        }
+      }
     ],
     treeshake: false,
     external: await generateExternal({ full: false })

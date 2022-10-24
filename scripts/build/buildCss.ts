@@ -25,7 +25,8 @@ async function buildCss() {
     .pipe(
       rename((path) => {
         const [name] = path.dirname.split('/')
-        path.dirname = name
+        path.dirname = name.toLocaleLowerCase()
+        path.basename = 'index'
       })
     )
     .pipe(dest(buildCssOutPut))

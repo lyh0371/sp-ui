@@ -24,6 +24,7 @@
     "preinstall": "npx only-allow pnpm",
     "postinstallmac": "git config core.hooksPath .husky && chmod 700 .husky/*",
     "eslint": "eslint --cache --max-warnings 0  \"packages/**/*.{vue,ts,js,tsx}\" --fix",
+    "ci:version": "pnpm changelog && pnpx changeset version && pnpm install --no-frozen-lockfile && git add .",
     "commit": "git add . && git-cz"
   },
   "repository": {

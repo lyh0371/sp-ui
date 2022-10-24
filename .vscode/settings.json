@@ -29,5 +29,6 @@
     "*.cshtml": "html",
     "*.dwt": "html"
   },
-  "editor.formatOnPaste": true
+  "editor.formatOnPaste": true,
+  "liveServer.settings.port": 5501
 }

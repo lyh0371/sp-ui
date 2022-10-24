@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "sp-ui组件库vue3+vite+gulp+rollup",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "ci:version": "pnpm changelog && pnpx changeset version && pnpm install --no-frozen-lockfile && git add ."
   },
   "author": "刘小灰",
   "license": "MIT",

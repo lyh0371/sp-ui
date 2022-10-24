@@ -8,7 +8,9 @@
   height: 30px;
   margin-right: 2px;
 }
-
+.token.operator {
+  background: none;
+}
 .custom-block.tip {
   border-color: var(--c-brand-light);
 }

@@ -25,6 +25,7 @@ importers:
       '@types/prismjs': ^1.26.0
       '@types/replacestream': ^4.0.1
       '@types/rollup': ^0.54.0
+      '@types/rollup-plugin-css-only': ^3.1.0
       '@typescript-eslint/parser': ^5.30.7
       '@vitejs/plugin-vue': ^3.0.3
       '@vitejs/plugin-vue-jsx': ^2.0.0
@@ -61,7 +62,7 @@ importers:
       prismjs: ^1.29.0
       replacestream: ^4.0.3
       rollup: ^2.78.1
-      rollup-plugin-css-only: ^3.1.0
+      rollup-plugin-css-only: 4.1.1
       rollup-plugin-esbuild: ^4.9.3
       rollup-plugin-postcss: ^4.0.2
       rollup-plugin-scss: ^3.0.0
@@ -100,6 +101,7 @@ importers:
       '@types/prismjs': 1.26.0
       '@types/replacestream': 4.0.1
       '@types/rollup': 0.54.0
+      '@types/rollup-plugin-css-only': 3.1.0
       '@typescript-eslint/parser': 5.33.1_hxadhbs2xogijvk7vq4t2azzbu
       '@vitejs/plugin-vue': 3.0.3_vite@3.0.8+vue@3.2.37
       '@vitejs/plugin-vue-jsx': 2.0.0_vite@3.0.8+vue@3.2.37
@@ -136,7 +138,7 @@ importers:
       prismjs: 1.29.0
       replacestream: 4.0.3
       rollup: 2.78.1
-      rollup-plugin-css-only: 3.1.0_rollup@2.78.1
+      rollup-plugin-css-only: 4.1.1_rollup@2.78.1
       rollup-plugin-esbuild: 4.9.3_75tz4fz3hdw34ihj4xz6ux6bmq
       rollup-plugin-postcss: 4.0.2_postcss@8.4.18
       rollup-plugin-scss: 3.0.0
@@ -1126,6 +1128,21 @@ packages:
       picomatch: 2.3.1
     dev: true
 
+  /@rollup/pluginutils/5.0.2_rollup@2.78.1:
+    resolution: {integrity: sha512-pTd9rIsP92h+B6wWwFbW8RkZv4hiR/xKsqre4SIuAOaOEQRxi0lqLke9k2/7WegC85GgUs9pjmOjCUi3In4vwA==}
+    engines: {node: '>=14.0.0'}
+    peerDependencies:
+      rollup: ^1.20.0||^2.0.0||^3.0.0
+    peerDependenciesMeta:
+      rollup:
+        optional: true
+    dependencies:
+      '@types/estree': 1.0.0
+      estree-walker: 2.0.2
+      picomatch: 2.3.1
+      rollup: 2.78.1
+    dev: true
+
   /@tootallnate/once/1.1.2:
     resolution: {integrity: sha512-RbzJvlNzmRq5c3O09UipeuXno4tA1FE6ikOjxZK0tuxVv3412l64l5t1W5pj4+rJq9vpkm/kwiR07aZXnsKPxw==}
     engines: {node: '>= 6'}
@@ -1174,6 +1191,10 @@ packages:
 
   /@types/estree/0.0.39:
     resolution: {integrity: sha512-EYNwp3bU+98cpU4lAWYYL7Zz+2gryWH1qbdDTidVd6hkiR6weksdbMadyXKXNPEkQFhXM+hVO9ZygomHXp+AIw==}
+    dev: true
+
+  /@types/estree/1.0.0:
+    resolution: {integrity: sha512-WulqXMDUTYAXCjZnk6JtIHPigp55cVtDgDrO2gHRwhyJto21+1zbVCtOYB2L1F9w4qCQ0rOGWBnBe0FNTiEJIQ==}
     dev: true
 
   /@types/expect/1.20.4:
@@ -1302,6 +1323,13 @@ packages:
     resolution: {integrity: sha512-yy7HuzQhj0dhGpD8RLXSZWEkLsV9ibvxvi6EiJ3bkqLAO1RGo0WbkWQiwpRlSFymTJRz0d3k5LM3kkx8ArDbLw==}
     dependencies:
       '@types/node': 18.7.6
+    dev: true
+
+  /@types/rollup-plugin-css-only/3.1.0:
+    resolution: {integrity: sha512-2/CYJ3xDTVtS9DBDXhj0jjxF3idO1yUjJWjFzqA3JlK8NqSlUHeMKv3FH/VILLrnvdZRY+901TlDPnKa4WhFYA==}
+    dependencies:
+      '@types/node': 18.7.6
+      rollup: 0.63.5
     dev: true
 
   /@types/rollup/0.54.0:
@@ -7398,13 +7426,13 @@ packages:
       glob: 7.2.3
     dev: true
 
-  /rollup-plugin-css-only/3.1.0_rollup@2.78.1:
-    resolution: {integrity: sha512-TYMOE5uoD76vpj+RTkQLzC9cQtbnJNktHPB507FzRWBVaofg7KhIqq1kGbcVOadARSozWF883Ho9KpSPKH8gqA==}
-    engines: {node: '>=10.12.0'}
+  /rollup-plugin-css-only/4.1.1_rollup@2.78.1:
+    resolution: {integrity: sha512-Dd5Nsv6UA1F4alDCdB95kAb7SkOjkddvA/+6J6cEc1z5C9p1SfjztRPH2ABy/2OFlUPuS6XLk0XPtIDEA7RtWw==}
+    engines: {node: '>=14'}
     peerDependencies:
-      rollup: 1 || 2
+      rollup: <4
     dependencies:
-      '@rollup/pluginutils': 4.2.1
+      '@rollup/pluginutils': 5.0.2_rollup@2.78.1
       rollup: 2.78.1
     dev: true
 
@@ -7460,6 +7488,14 @@ packages:
     resolution: {integrity: sha512-EEp9NhnUkwY8aif6bxgovPHMoMoNr2FulJziTndpt5H9RdwC47GSGuII9XxpSdzVGM0GWrNPHV6ie1LTNJPaLQ==}
     dependencies:
       estree-walker: 0.6.1
+    dev: true
+
+  /rollup/0.63.5:
+    resolution: {integrity: sha512-dFf8LpUNzIj3oE0vCvobX6rqOzHzLBoblyFp+3znPbjiSmSvOoK2kMKx+Fv9jYduG1rvcCfCveSgEaQHjWRF6g==}
+    hasBin: true
+    dependencies:
+      '@types/estree': 0.0.39
+      '@types/node': 18.7.6
     dev: true
 
   /rollup/2.77.3:

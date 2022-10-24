@@ -4,8 +4,12 @@ const siderbar = {
       text: '组件',
       items: [
         {
-          text: 'button',
+          text: 'Button',
           link: '/components/button'
+        },
+        {
+          text: 'Tabbar',
+          link: '/components/Tabbar'
         }
       ]
     }

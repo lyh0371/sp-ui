@@ -14,6 +14,7 @@ module.exports = {
   extends: ['plugin:vue/vue3-recommended', 'eslint:recommended', 'plugin:prettier/recommended'],
   rules: {
     'vue/order-in-components': 'off',
+    'vue/no-setup-props-destructure': 'off',
     'vue/html-self-closing': 'off',
     'vue/prefer-import-from-vue': 'off',
     'vue/require-default-prop': 'off',

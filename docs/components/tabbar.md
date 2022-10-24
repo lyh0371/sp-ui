@@ -1,8 +1,15 @@
+# Tabbal 按钮
+
+用于移动端底部 tabbar。
+也可以使用在 PC 端，如果你愿意的话
+
+## 基础用法
+
+:::demo
+
+```vue
 <template>
-  <div>
-    <SpTabbar v-model:activeIndex="activeIndex" :tab-list="tabList" @change="change"></SpTabbar>
-    <span class="name">play</span>
-  </div>
+  <sp-tabbar :tabList="tabList" v-model:activeIndex="activeIndex" @change="change"></sp-tabbar>
 </template>
 <script lang="ts" setup>
 import { ref } from 'vue'
@@ -29,8 +36,4 @@ const change = (item: any) => {
   console.log(item)
 }
 </script>
-<style scoped>
-.name {
-  font-size: 16px;
-}
-</style>
+```

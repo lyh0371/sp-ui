@@ -7,7 +7,6 @@ import { excludeFiles, writeBundles, generateExternal } from './utils'
 import { readJSON, writeJsonSync } from 'fs-extra'
 // 不需要了
 import postcss from 'rollup-plugin-postcss'
-
 import { nodeResolve } from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
 import esbuild from 'rollup-plugin-esbuild'
@@ -28,8 +27,12 @@ async function buildModules() {
     input,
     plugins: [
       vue({
-        isProduction: false
+        isProduction: false,
+        style: {
+          trim: false
+        }
       }) as Plugin,
+
       DefineOptions(),
       vueJsx() as Plugin,
       postcss({

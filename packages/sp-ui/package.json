@@ -20,5 +20,5 @@
       "@sp-ui/styles": "workspace:^1.0.0",
     "@sp-ui/utils": "workspace:^1.0.0",
      "@sp-ui/components": "workspace:^1.0.0",
-  },
+  }
 }

@@ -1,2 +1,2 @@
-export * from './Button'
-export * from './Tabbar'
+export * from './Button/index.ts'
+export * from './Tabbar/index.ts'

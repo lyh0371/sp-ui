@@ -1,5 +1,6 @@
 
 .prettierrc
+pnpm-lock.yaml
 !commitlint.config.js
 .babel.config.js
 !.umirc.ts

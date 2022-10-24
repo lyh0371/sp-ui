@@ -16,6 +16,9 @@
     "@types/lodash-es": "^4.17.6",
     "lodash": "^4.17.21",
     "lodash-es": "^4.17.21",
-    "lodash-unified": "^1.0.2"
-  }
+    "lodash-unified": "^1.0.2",
+      "@sp-ui/styles": "workspace:^1.0.0",
+    "@sp-ui/utils": "workspace:^1.0.0",
+     "@sp-ui/components": "workspace:^1.0.0",
+  },
 }

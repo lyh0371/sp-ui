@@ -3,5 +3,10 @@ import DefineOptions from 'unplugin-vue-define-options/vite'
 
 import vueJsx from '@vitejs/plugin-vue-jsx'
 export default defineConfig({
-  plugins: [vueJsx(), DefineOptions()]
+  plugins: [vueJsx(), DefineOptions()],
+  build: {
+    rollupOptions: {
+      external: ['vue']
+    }
+  }
 })

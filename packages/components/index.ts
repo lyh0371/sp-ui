@@ -1,2 +1,2 @@
-export * from './Button/index'
-export * from './Tabbar/index'
+export * from './button'
+export * from './tabbar'

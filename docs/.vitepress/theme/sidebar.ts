@@ -9,7 +9,7 @@ const siderbar = {
         },
         {
           text: 'Tabbar',
-          link: '/components/Tabbar'
+          link: '/components/tabbar'
         }
       ]
     }

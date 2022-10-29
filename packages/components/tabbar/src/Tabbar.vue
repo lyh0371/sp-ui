@@ -1,68 +1,19 @@
 <template>
-  <div class="sp-tabbar">
-    <div class="tabbar-warp" :style="{ height: height, backgroundColor: bgColor }">
-      <span class="tabbar-warp__indicator" :style="indicatorStyle"></span>
-      <div
-        v-for="(item, index) in tabList"
-        :key="item.title"
-        class="tabbar-warp__item"
-        :style="{ width: tabWidth }"
-        :class="{ active: activeIndex === index }"
-        @click="clickHandle(item, index)"
-      >
-        <div class="icon" v-html="item.icon"></div>
-        <span class="title"> {{ item.title }}</span>
-      </div>
-    </div>
-    <svg id="filter-svg" xmlns="http://www.w3.org/2000/svg" version="1.1">
-      <defs>
-        <filter id="goo">
-          <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
-          <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
-          <feBlend in="SourceGraphic" in2="goo" />
-        </filter>
-      </defs>
-    </svg>
-  </div>
+  <component :is="modelComp" v-bind="$attrs"></component>
 </template>
 <script lang="ts" setup>
-import { PropType, computed } from 'vue'
-type TtabList = {
-  title: string
-  icon: string
-}
-const emit = defineEmits(['update:activeIndex', 'change'])
+import { computed, PropType } from 'vue'
+import Model1 from './Model1.vue'
+import Model2 from './Model2.vue'
+type Ttype = 1 | 2
 const props = defineProps({
-  tabList: {
-    type: Array as PropType<TtabList[]>,
-    required: true
-  },
-  height: {
-    type: String,
-    default: '46px'
-  },
-  bgColor: {
-    type: String,
-    default: '#603b9c'
-  },
-  activeIndex: {
-    type: Number,
-    default: 0
+  type: {
+    type: Number as PropType<Ttype>,
+    default: 1
   }
 })
-const clickHandle = (item: TtabList, index: Number) => {
-  emit('update:activeIndex', index)
-  emit('change', item)
-}
-const tabLen = props.tabList.length
-const tabWidth = computed(() => 100 / tabLen + '%')
-const indicatorStyle = computed(() => {
-  const indicatorLeft = (100 / (tabLen * 2)) * (props.activeIndex * 2 + 1) + '%'
-  return {
-    left: `calc(${indicatorLeft} - calc((${props.height} + 10px) / 2))`,
-    height: props.height,
-    width: `calc(${props.height} + 10px)`,
-    backgroundColor: props.bgColor
-  }
-})
+
+const modelArr = ['', Model1, Model2]
+const modelComp = computed(() => modelArr[props.type])
 </script>
+<style scoped></style>

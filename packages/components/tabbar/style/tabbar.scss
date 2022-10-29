@@ -1,21 +1,23 @@
-.sp-tabbar {
-  // --bg-nav: v-bind(bgColor);
+@mixin tabberWarp {
+  display: flex;
+  color: #fff;
+  position: relative;
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.sp-tabbar1 {
   margin-top: 20px;
   .tabbar-warp {
-    display: flex;
-    // background-color: var(--bg-nav);
-    // height: v-bind(tabHeight);
+    @include tabberWarp();
     border-radius: 20px;
-    color: #fff;
-    position: relative;
     filter: url('#goo');
     &__item {
-      display: flex;
-      // width: v-bind(tabWidth);
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      transition: transform 0.2s;
+      transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       .title {
         font-size: 12px;
         display: none;
@@ -36,15 +38,66 @@
       }
     }
     &__indicator {
-      // width: calc(v-bind(tabHeight) + 10px);
-      // height: v-bind(tabHeight);
       border-radius: 50%;
-      // background-color: var(--bg-nav);
       position: absolute;
       top: -20px;
-      // left: calc(v-bind(indicatorLeft) - calc((v-bind(tabHeight) + 10px) / 2));
       z-index: -1;
       transition: left 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+  }
+}
+
+.sp-tabbar2 {
+  .tabbar-warp {
+    @include tabberWarp();
+    font-size: 12px;
+    position: initial;
+    &__item {
+      position: relative;
+      &::before {
+        content: '';
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        transform: scale(0);
+        transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+        background-color: #fff;
+        position: absolute;
+      }
+    }
+    .active {
+      transform: translateY(-6px);
+      z-index: 0;
+      .icon-warp {
+        position: relative;
+        z-index: 1;
+
+        .icon {
+          color: #000;
+        }
+      }
+      &::before {
+        transform: scale(1);
+      }
+    }
+  }
+  .tabbar-warp__indicator {
+    position: relative;
+    width: 100%;
+    height: 33px;
+    overflow: hidden;
+    margin-bottom: 0;
+
+    #wave {
+      position: absolute;
+      width: 120px;
+      transform-origin: bottom;
+      transform: scaleX(1.3);
+      transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+      top: 15px;
+      .path {
+        fill: #603b9c;
+      }
     }
   }
 }

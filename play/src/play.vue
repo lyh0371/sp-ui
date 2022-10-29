@@ -1,30 +1,28 @@
 <template>
-  <div>
-    <SpTabbar v-model:activeIndex="activeIndex" :tab-list="tabList" @change="change"></SpTabbar>
-    <span class="name">play</span>
+  <div class="footer-tabber">
+    <SpTabbar v-model:activeIndex="activeIndex" :type="2" :tab-list="tabList" @change="change"></SpTabbar>
   </div>
 </template>
 <script lang="ts" setup>
 import { ref } from 'vue'
 const tabList = ref([
   {
-    title: '首页',
-    icon: `<i class="iconfont icon-shouye"></i>`
+    icon: `首页`
   },
   {
-    title: '列表1',
-    icon: `<i class="iconfont icon-liebiao"></i>`
+    icon: `新闻`
   },
   {
-    title: '列表2',
-    icon: `<i class="iconfont icon-liebiao"></i>`
+    icon: `添加`
   },
   {
-    title: '我的',
-    icon: `<i class="iconfont icon-wode"></i>`
+    icon: '列表'
+  },
+  {
+    icon: `我的`
   }
 ])
-const activeIndex = ref(0)
+const activeIndex = ref(1)
 const change = (item: any) => {
   console.log(item)
 }
@@ -32,5 +30,10 @@ const change = (item: any) => {
 <style scoped>
 .name {
   font-size: 16px;
+}
+.footer-tabber {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 </style>

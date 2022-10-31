@@ -5,6 +5,7 @@
 import { computed, PropType } from 'vue'
 import Model1 from './Model1.vue'
 import Model2 from './Model2.vue'
+
 type Ttype = 1 | 2
 const props = defineProps({
   type: {

@@ -1,11 +1,11 @@
 <template>
   <div class="sp-tabbar1">
-    <div class="tabbar-warp" :style="{ height: height, backgroundColor: bgColor }">
-      <span class="tabbar-warp__indicator" :style="indicatorStyle"></span>
+    <div class="tabbar-wrap" :style="{ height: height, backgroundColor: bgColor }">
+      <span class="tabbar-wrap__indicator" :style="indicatorStyle"></span>
       <div
         v-for="(item, index) in tabList"
         :key="item.title"
-        class="tabbar-warp__item"
+        class="tabbar-wrap__item"
         :style="{ width: tabWidth }"
         :class="{ active: activeIndex === index }"
         @click="clickHandle(item, index)"

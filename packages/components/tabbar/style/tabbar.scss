@@ -1,4 +1,4 @@
-@mixin tabberWarp {
+@mixin tabberwrap {
   display: flex;
   color: #fff;
   position: relative;
@@ -12,8 +12,8 @@
 
 .sp-tabbar1 {
   margin-top: 20px;
-  .tabbar-warp {
-    @include tabberWarp();
+  .tabbar-wrap {
+    @include tabberwrap();
     border-radius: 20px;
     filter: url('#goo');
     &__item {
@@ -48,8 +48,8 @@
 }
 
 .sp-tabbar2 {
-  .tabbar-warp {
-    @include tabberWarp();
+  .tabbar-wrap {
+    @include tabberwrap();
     font-size: 12px;
     position: initial;
     &__item {
@@ -68,7 +68,7 @@
     .active {
       transform: translateY(-6px);
       z-index: 0;
-      .icon-warp {
+      .icon-wrap {
         position: relative;
         z-index: 1;
 
@@ -81,7 +81,7 @@
       }
     }
   }
-  .tabbar-warp__indicator {
+  .tabbar-wrap__indicator {
     position: relative;
     width: 100%;
     height: 33px;

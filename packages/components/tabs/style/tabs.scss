@@ -1,0 +1,21 @@
+.sp--tabs {
+  display: flex;
+  border-bottom: 2px solid var(--borderColor);
+  position: relative;
+  &__item {
+    position: relative;
+    margin: 0 10px;
+    padding-bottom: 4px;
+    cursor: pointer;
+  }
+  &__bar {
+    position: absolute;
+    bottom: -2px;
+    height: 2px;
+    background-color: var(--themeColor);
+    transition: transform 0.3s cubic-bezier(0.4, 0.4, 0, 1.14);
+  }
+  &__item__active {
+    color: var(--themeColor);
+  }
+}

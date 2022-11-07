@@ -2,6 +2,7 @@ const siderbar = {
   '/components/': [
     {
       text: '组件',
+      collapsible: true,
       items: [
         {
           text: 'Button',
@@ -10,6 +11,10 @@ const siderbar = {
         {
           text: 'Tabbar',
           link: '/components/tabbar'
+        },
+        {
+          text: 'Tabs',
+          link: '/components/tabs'
         }
       ]
     }

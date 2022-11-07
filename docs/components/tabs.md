@@ -1,7 +1,15 @@
+# Tabs
+
+有点不一样的 `Tabs`
+
+## 基础用法
+
+:::demo
+
+```vue
 <template>
-  <div class="footer-tabber">
-    <div>tabs</div>
-    <sp-tabs v-model="activeIndex" :tabs="tabs" border-color="#eee" theme-color="green" @change="change">
+  <div style="margin-bottom:20px;">
+    <sp-tabs :tabs="tabs" v-model="activeIndex" borderColor="#ccc" themeColor="green" @change="change">
       <template #slotA>
         <div class="small-tip">01</div>
       </template>
@@ -39,10 +47,8 @@ const change = (item: any) => {
   console.log(item)
 }
 </script>
+
 <style scoped>
-.footer-tabber {
-  margin: 100px;
-}
 .small-tip {
   width: 20px;
   height: 20px;
@@ -57,3 +63,4 @@ const change = (item: any) => {
   right: -10px;
 }
 </style>
+```

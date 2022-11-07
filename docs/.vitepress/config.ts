@@ -12,6 +12,7 @@ const ogUrl = 'https://vitejs.dev'
 export default defineConfig({
   title: `SP-UI`,
   description: '组件库',
+  cleanUrls: 'without-subfolders',
   head: [
     ['link', { rel: 'icon', type: 'image/svg+xml', href: '/logo.png' }],
     ['meta', { property: 'og:type', content: 'website' }],
@@ -31,8 +32,8 @@ export default defineConfig({
   themeConfig: {
     logo: '/logo.png',
     editLink: {
-      pattern: 'https://github.com/vitejs/vite/edit/main/docs/:path',
-      text: 'Suggest changes to this page'
+      pattern: 'https://github.com/lyh0371/sp-ui/tree/master/docs/:path',
+      text: '查看此页面'
     },
 
     socialLinks: [{ icon: 'github', link: 'https://github.com/lyh0371/sp-ui' }],

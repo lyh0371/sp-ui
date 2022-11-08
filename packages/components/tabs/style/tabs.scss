@@ -1,12 +1,23 @@
 .sp--tabs {
-  display: flex;
-  border-bottom: 2px solid var(--borderColor);
-  position: relative;
+  width: 100%;
+  overflow-x: clip;
+
+  &__scroll {
+    display: flex;
+    border-bottom: 2px solid var(--borderColor);
+    position: relative;
+    white-space: nowrap;
+    float: left;
+    transition: transform 0.3s cubic-bezier(0.4, 0.4, 0, 1.14);
+  }
   &__item {
     position: relative;
     margin: 0 10px;
-    padding-bottom: 4px;
+    // padding-bottom: 4px;
+    line-height: 2;
     cursor: pointer;
+    white-space: nowrap;
+    user-select: none;
   }
   &__bar {
     position: absolute;

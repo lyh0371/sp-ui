@@ -10,31 +10,14 @@
 </template>
 <script lang="ts" setup>
 import { ref } from 'vue'
-const tabs = ref([
-  {
-    id: 1,
-    title: '语文'
-  },
-  {
-    id: 2,
-    title: '数学',
-    slot: 'slotA'
-  },
-  {
-    id: 3,
-    title: '外语',
-    disabled: false
-  },
-  {
-    id: 4,
-    title: '生物'
-  },
-  {
-    id: 5,
-    title: '物理'
-  }
-])
-const activeIndex = ref(1)
+
+const tabs = ref()
+tabs.value = [...new Array(20)].map((item, index) => ({
+  id: index,
+  title: `科目${index + 1}`
+}))
+
+const activeIndex = ref(5)
 const change = (item: any) => {
   console.log(item)
 }
@@ -42,6 +25,7 @@ const change = (item: any) => {
 <style scoped>
 .footer-tabber {
   margin: 100px;
+  width: 200px;
 }
 .small-tip {
   width: 20px;

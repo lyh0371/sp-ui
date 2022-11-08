@@ -64,3 +64,32 @@ const change = (item: any) => {
 }
 </style>
 ```
+
+:::
+
+## 当数据多的时候
+
+:::demo
+
+```vue
+<template>
+  <div style="margin-bottom:20px; width:600px">
+    <sp-tabs :tabs="tabs" v-model="activeIndex" borderColor="#ccc" themeColor="green" @change="change"> </sp-tabs>
+  </div>
+</template>
+<script lang="ts" setup>
+import { ref } from 'vue'
+const tabs = ref()
+tabs.value = [...new Array(20)].map((item, index) => ({
+  id: index,
+  title: `科目${index + 1}`
+}))
+
+const activeIndex = ref(5)
+const change = (item: any) => {
+  console.log(item)
+}
+</script>
+```
+
+:::
